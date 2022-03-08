@@ -1,4 +1,5 @@
-import "./index.css";
+import './index.css';
 
-import showMealList from "./utils";
+import showMealList from './utils.js';
+
 showMealList();

@@ -1,26 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
-	list-style: none;
-	text-decoration: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #f1f2f6;
+  font-family: "Roboto", sans-serif;
 }
 
 ul {
-	width: 100%;
-	background-color: #74b9ff;
-	height: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 20px;
+  width: 100%;
+  background-color: #212529;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul li {
-	margin: 0 20px;
+  margin: 0 20px;
 }
 
 ul li a {
-	text-decoration: none;
-	color: #333;
-	font-size: 1.2rem;
-	text-transform: capitalize;
-	color: aliceblue;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: aliceblue;
 }
+
+#meals-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  margin: 20px 50px;
+  width: 330px;
+  height: 420px;
+  border: 0.8px solid #222 !important;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.meal-container:hover {
+  transform: scale(1.1);
+}
+
+.meal-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.meal-container .meal-title {
+  font-size: 1rem;
+  padding: 15px 0;
+  color: #534340;
+}
+
+.meal-container .heart-container {
+  display: flex;
+  align-items: center;
+}
+
+.meal-container .meal-content {
+  padding: 0 8px;
+  background-color: #fff;
+}
+
+.meal-container .fa-heart {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  transition: all ease 0.3s;
+  color: tomato;
+  padding-right: 8px;
+}
+
+.comment-btn {
+  width: 100%;
+  border: transparent;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: #bb9981;
+  color: #f1f2f6;
+}
+
+/* .preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	visibility: visible;
+	z-index: 999;
+	transition: all 0.3s linear;
+} */
