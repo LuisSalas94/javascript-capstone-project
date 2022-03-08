@@ -1,0 +1,26 @@
+* {
+	list-style: none;
+	text-decoration: none;
+}
+
+ul {
+	width: 100%;
+	background-color: #74b9ff;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+}
+
+ul li {
+	margin: 0 20px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.2rem;
+	text-transform: capitalize;
+	color: aliceblue;
+}
