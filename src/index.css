@@ -94,18 +94,3 @@ ul li a {
   background-color: #bb9981;
   color: #f1f2f6;
 }
-
-/* .preloader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #fff;
-	display: grid;
-	justify-content: center;
-	align-items: center;
-	visibility: visible;
-	z-index: 999;
-	transition: all 0.3s linear;
-} */
