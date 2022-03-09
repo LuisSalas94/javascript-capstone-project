@@ -11,7 +11,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-ul {
+header ul {
   width: 100%;
   background-color: #212529;
   height: 40px;
@@ -20,11 +20,11 @@ ul {
   align-items: center;
 }
 
-ul li {
+header ul li {
   margin: 0 20px;
 }
 
-ul li a {
+header ul li a {
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: capitalize;
