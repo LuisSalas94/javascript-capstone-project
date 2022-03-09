@@ -32,9 +32,11 @@ const showMealList = () => {
         modalHeader.innerHTML = res.strMeal;
         modalBody.innerHTML = `
         <img src="${res.strMealThumb}" alt="${res.strMeal}" class="w-100">
-        <h3>${res.strCategory}</h3>
-        <h4>${res.strArea}</h4>
-        <h5>${res.strTags}</h5>
+        <div class="d-flex">
+          <h3 class="modal-category">Category: <span class="fw-light">${res.strCategory}</span></h3>
+          <h3 class="modal-category">Country: <span class="fw-light">${res.strArea}</span></h3>
+          <h3 class="modal-category">Tags: <span class="fw-light">${res.strTags}</span></h3>
+        </div>
         <p>${res.strInstructions}</p>
         `;
       });

@@ -95,3 +95,19 @@ ul li a {
   background-color: #bb9981;
   color: #f1f2f6;
 }
+
+.modal-title {
+  text-align: center;
+  flex: 1;
+}
+
+.modal-category {
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+.btn {
+  color: #000;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
