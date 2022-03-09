@@ -2,6 +2,8 @@ import {
   getMealsList, getMealDetalis, getLikes, getComments, sendLike, sendComment,
 } from './api-handlers.js';
 
+const countItems = (mealArr) => mealArr.length;
+
 const showMealList = () => {
   getLikes().then((likesObj) => {
     getMealsList().then((res) => {
@@ -19,6 +21,8 @@ const showMealList = () => {
         </div>
         <button type="button" class="comment-btn" data-bs-toggle="modal" data-bs-target="#recipe-modal">Comments</button>
       </div>`).join('')}`;
+
+      document.querySelector('#counterItem').innerHTML = `${countItems(res.meals)} items.`;
 
       const openModal = (e) => {
         const currentCommentBtn = e.target;
