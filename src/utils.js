@@ -1,4 +1,4 @@
-import getMealsList from './api-handlers.js';
+import { getMealsList, getMealDetalis } from './api-handlers.js';
 
 const showMealList = () => {
   getMealsList().then((res) => {
