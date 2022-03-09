@@ -57,6 +57,13 @@ const showMealList = () => {
           <ul id="comments-list">
               ${displayComments(commentsList)}
           </ul>
+          <h5>Add a comment</h5>
+          <form id="comments-form" class="d-flex flex-column">
+            <label for="name" hidden>Enter name</label>
+            <input type="text" required placeholder="Your Name" id="name" name="name" class="w-50 mb-2">
+            <label for="message" hidden>Enter comment</label>
+            <textarea required placeholder="Your Insights" id="message" name="message"></textarea>
+          </form>
           `;
           });
         });
