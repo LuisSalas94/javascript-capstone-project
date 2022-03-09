@@ -1,6 +1,7 @@
 const MEALSDB_API = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 const MEAL_ID_BASE_API = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 const LIKES_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BnjmjUJJQAhlumcZxnbj/likes/';
+const GET_COMMENTS_ID_BASE_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BnjmjUJJQAhlumcZxnbj/comments?item_id=';
 
 const getLikes = async () => {
   const response = await fetch(LIKES_API);
@@ -25,4 +26,14 @@ const getMealDetalis = async (id) => {
   return mealDetails.meals[0];
 };
 
-export { getMealsList, getMealDetalis, getLikes };
+const getComments = async (id) => {
+  const response = await fetch(`${GET_COMMENTS_ID_BASE_API}${id}`);
+  if (!response.ok) return [];
+  const commentsList = await response.json().catch(() => false);
+  if (!commentsList) return [];
+  return commentsList;
+};
+
+export {
+  getMealsList, getMealDetalis, getLikes, getComments,
+};

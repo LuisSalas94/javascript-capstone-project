@@ -1,4 +1,6 @@
-import { getMealsList, getMealDetalis, getLikes } from './api-handlers.js';
+import {
+  getMealsList, getMealDetalis, getLikes, getComments,
+} from './api-handlers.js';
 
 const showMealList = () => {
   getLikes().then((likesObj) => {
@@ -34,17 +36,29 @@ const showMealList = () => {
         const modalBody = document.querySelector('.modal-body');
         modalHeader.innerHTML = 'LOADING ...';
         modalBody.innerHTML = '';
-        getMealDetalis(id).then((res) => {
-          modalHeader.innerHTML = res.strMeal;
-          modalBody.innerHTML = `
-        <img src="${res.strMealThumb}" alt="${res.strMeal}" class="w-100">
-        <div class="d-flex flex-column">
-          <h3 class="modal-category">Category: <span class="fw-light">${res.strCategory}</span></h3>
-          <h3 class="modal-category">Country: <span class="fw-light">${res.strArea}</span></h3>
-          <h3 class="modal-category">Tags: <span class="fw-light">${res.strTags}</span></h3>
-        </div>
-        <p>${res.strInstructions}</p>
-        `;
+
+        const displayComments = (comments) => {
+          if (!comments.length) return 'There are no comments yet';
+          return `${comments.map((item) => `<li><span class="fw-bold">${item.creation_date}</span> <span class="text-decoration-underline">${item.username}:</span> ${item.comment}</li>`).join('')}`;
+        };
+
+        getComments(id).then((commentsList) => {
+          getMealDetalis(id).then((res) => {
+            modalHeader.innerHTML = res.strMeal;
+            modalBody.innerHTML = `
+          <img src="${res.strMealThumb}" alt="${res.strMeal}" class="w-100">
+          <div class="d-flex flex-column">
+            <h3 class="modal-category">Category: <span class="fw-light">${res.strCategory}</span></h3>
+            <h3 class="modal-category">Country: <span class="fw-light">${res.strArea}</span></h3>
+            <h3 class="modal-category">Tags: <span class="fw-light">${res.strTags}</span></h3>
+          </div>
+          <p>${res.strInstructions}</p>
+          <h6 class="fw-bold">Comments ()</h6>
+          <ul id="comments-list">
+              ${displayComments(commentsList)}
+          </ul>
+          `;
+          });
         });
       };
 
