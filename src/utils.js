@@ -3,6 +3,7 @@ import {
 } from './api-handlers.js';
 
 const countItems = (mealArr) => mealArr.length;
+const countComments = (commentsArr) => commentsArr.length;
 
 const showMealList = () => {
   getLikes().then((likesObj) => {
@@ -48,7 +49,7 @@ const showMealList = () => {
               <h3 class="modal-category">Tags: <span class="fw-light">${res.strTags}</span></h3>
             </div>
             <p>${res.strInstructions}</p>
-            <h6 class="fw-bold">Comments ()</h6>
+            <h6 class="fw-bold">Comments (${countComments(commentsList)})</h6>
             <ul id="comments-list">
                 ${displayComments(commentsList)}
             </ul>
