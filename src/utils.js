@@ -19,6 +19,32 @@ const showMealList = () => {
       </div>`,
     )
     .join('')}`;
+
+    const openModal = (e) => {
+      const currentCommentBtn = e.target;
+      const { id } = currentCommentBtn.parentNode;
+      const modalHeader = document.querySelector('.modal-title');
+      const modalBody = document.querySelector('.modal-body');
+      modalHeader.innerHTML = 'LOADING ...';
+      modalBody.innerHTML = '';
+
+      getMealDetalis(id).then((res) => {
+        modalHeader.innerHTML = res.strMeal;
+        modalBody.innerHTML = `
+        <img src="${res.strMealThumb}" alt="${res.strMeal}" class="w-100">
+        <h3>${res.strCategory}</h3>
+        <h4>${res.strArea}</h4>
+        <h5>${res.strTags}</h5>
+        <p>${res.strInstructions}</p>
+        `;
+      });
+    };
+
+    const commentBtns = document.querySelectorAll('.comment-btn');
+
+    for (let i = 0; i < commentBtns.length; i += 1) {
+      commentBtns[i].addEventListener('click', openModal);
+    }
   });
 };
 
