@@ -1,5 +1,5 @@
 import {
-  getMealsList, getMealDetalis, getLikes, getComments,
+  getMealsList, getMealDetalis, getLikes, getComments, sendLike,
 } from './api-handlers.js';
 
 const showMealList = () => {
@@ -63,9 +63,22 @@ const showMealList = () => {
       };
 
       const commentBtns = document.querySelectorAll('.comment-btn');
+      const likeBtns = document.querySelectorAll('.like-btn');
+      const likeFunc = (e) => {
+        const currentLikeBtn = e.target;
+        const { id } = currentLikeBtn.parentNode.parentNode.parentNode;
+        const numberLikes = currentLikeBtn.parentNode.lastElementChild;
+        numberLikes.innerHTML = `${
+          +numberLikes.innerHTML.split('')[0] + 1
+        } likes`;
+        currentLikeBtn.classList.replace('fa-regular', 'fa-solid');
+        sendLike(id);
+        currentLikeBtn.removeEventListener('click', likeFunc);
+      };
 
       for (let i = 0; i < commentBtns.length; i += 1) {
         commentBtns[i].addEventListener('click', openModal);
+        likeBtns[i].addEventListener('click', likeFunc);
       }
     });
   });

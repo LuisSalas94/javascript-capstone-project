@@ -14,6 +14,18 @@ const getLikes = async () => {
   return likesObj;
 };
 
+const sendLike = (id) => {
+  fetch(LIKES_API, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+};
+
 const getMealsList = async () => {
   const response = await fetch(MEALSDB_API);
   const mealsList = await response.json();
@@ -35,5 +47,5 @@ const getComments = async (id) => {
 };
 
 export {
-  getMealsList, getMealDetalis, getLikes, getComments,
+  getMealsList, getMealDetalis, getLikes, getComments, sendLike,
 };

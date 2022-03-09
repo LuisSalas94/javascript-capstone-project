@@ -42,11 +42,11 @@ header ul li a {
 .meal-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0;
   margin: 20px 50px;
   width: 330px;
-  height: 420px;
+  height: 440px;
   border: 0.8px solid #222 !important;
   border-radius: 5px;
   cursor: pointer;
@@ -66,6 +66,7 @@ header ul li a {
   font-size: 1rem;
   padding: 15px 0;
   color: #534340;
+  width: 200px;
 }
 
 .meal-container .heart-container {
