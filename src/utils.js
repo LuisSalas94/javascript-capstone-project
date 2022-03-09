@@ -1,4 +1,4 @@
-import getMealsList from './api-handlers.js';
+import { getMealsList, getMealDetalis } from './api-handlers.js';
 
 const showMealList = () => {
   getMealsList().then((res) => {
@@ -19,6 +19,34 @@ const showMealList = () => {
       </div>`,
     )
     .join('')}`;
+
+    const openModal = (e) => {
+      const currentCommentBtn = e.target;
+      const { id } = currentCommentBtn.parentNode;
+      const modalHeader = document.querySelector('.modal-title');
+      const modalBody = document.querySelector('.modal-body');
+      modalHeader.innerHTML = 'LOADING ...';
+      modalBody.innerHTML = '';
+
+      getMealDetalis(id).then((res) => {
+        modalHeader.innerHTML = res.strMeal;
+        modalBody.innerHTML = `
+        <img src="${res.strMealThumb}" alt="${res.strMeal}" class="w-100">
+        <div class="d-flex">
+          <h3 class="modal-category">Category: <span class="fw-light">${res.strCategory}</span></h3>
+          <h3 class="modal-category">Country: <span class="fw-light">${res.strArea}</span></h3>
+          <h3 class="modal-category">Tags: <span class="fw-light">${res.strTags}</span></h3>
+        </div>
+        <p>${res.strInstructions}</p>
+        `;
+      });
+    };
+
+    const commentBtns = document.querySelectorAll('.comment-btn');
+
+    for (let i = 0; i < commentBtns.length; i += 1) {
+      commentBtns[i].addEventListener('click', openModal);
+    }
   });
 };
 
