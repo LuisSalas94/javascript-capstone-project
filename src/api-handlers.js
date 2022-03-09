@@ -2,6 +2,7 @@ const MEALSDB_API = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafoo
 const MEAL_ID_BASE_API = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 const LIKES_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BnjmjUJJQAhlumcZxnbj/likes/';
 const GET_COMMENTS_ID_BASE_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BnjmjUJJQAhlumcZxnbj/comments?item_id=';
+const POST_COMMENT_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BnjmjUJJQAhlumcZxnbj/comments';
 
 const getLikes = async () => {
   const response = await fetch(LIKES_API);
@@ -46,6 +47,18 @@ const getComments = async (id) => {
   return commentsList;
 };
 
+const sendComment = (id, username, comment) => fetch(POST_COMMENT_API, {
+  method: 'POST',
+  body: JSON.stringify({
+    item_id: id,
+    username,
+    comment,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+});
+
 export {
-  getMealsList, getMealDetalis, getLikes, getComments, sendLike,
+  getMealsList, getMealDetalis, getLikes, getComments, sendLike, sendComment,
 };
