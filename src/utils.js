@@ -21,7 +21,7 @@ const showMealList = () => {
       <div class="col-4 border d-flex flex-column meal-container" data-aos="fade-down" id="${
   item.idMeal
 }" >
-        <img src="${item.strMealThumb}/preview" alt="${item.strMeal}">
+        <img src="${item.strMealThumb}" alt="${item.strMeal}">
         <div class="d-flex align-items-center justify-content-between meal-content">
           <h2 class="meal-title">${item.strMeal}</h2>
           <div class="heart-container">

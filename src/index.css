@@ -30,6 +30,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background-color: var(--color3);
+  min-height: 100vh;
 }
 
 header {
@@ -47,6 +48,8 @@ header ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 header ul li {
@@ -76,21 +79,19 @@ header ul li a:hover {
 }
 
 #meals-list {
-  width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  column-gap: 50px;
 }
 
-/* ************* BORDER RADIUS****************** */
 .meal-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 0;
-  margin: 20px 50px;
-  width: 330px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 330px;
   height: 440px;
   border: 0.8px solid var(--color3) !important;
   cursor: pointer;
