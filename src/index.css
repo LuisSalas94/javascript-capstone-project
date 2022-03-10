@@ -64,7 +64,7 @@ header ul li a {
   text-transform: capitalize;
   color: aliceblue;
   transition: all ease-in 0.3s;
-  font-family: "Eagle Lake", cursive;
+  font-family: "Work Sans", sans-serif;
 }
 
 header ul li a:hover {
@@ -120,6 +120,12 @@ header ul li a:hover {
 .meal-container .heart-container {
   display: flex;
   align-items: center;
+}
+
+footer p span {
+  color: var(--color1);
+  letter-spacing: 3px;
+  padding: 0 2px;
 }
 
 .meal-container .heart-container span {
@@ -181,12 +187,6 @@ header ul li a:hover {
 
 footer {
   background-color: var(--color2);
-}
-
-footer p span {
-  color: var(--color1);
-  letter-spacing: 3px;
-  padding: 0 2px;
 }
 
 /* Media Queries */
