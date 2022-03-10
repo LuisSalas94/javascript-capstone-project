@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
+
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --color1: #93bfcc;
+  --color2: #354c6e;
+  --color3: #e1e7ea;
+}
+
+*::selection {
+  background-color: var(--color1);
+  color: #fff;
+}
+
+html::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color1);
+}
+
+body {
+  background-color: var(--color3);
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--color2);
+  height: 60px;
+  box-shadow: 0 0.3rem 5rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+header ul {
+  width: 100%;
+  background-color: var(--color2);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  margin: 0 20px;
+  transition: all ease-in 0.2s;
+}
+
+header ul li:hover {
+  transform: scale(1.1);
+}
+
+header ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: aliceblue;
+  transition: all ease-in 0.3s;
+  font-family: "Work Sans", sans-serif;
+}
+
+header ul li a:hover {
+  color: var(--color1);
+}
+
+#counterItem {
+  cursor: pointer;
+}
+
+#meals-list {
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.meal-container {
+  justify-content: space-between;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 330px;
+  height: 440px;
+  border: 0.8px solid var(--color3) !important;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.meal-container:hover {
+  transform: scale(1.1);
+}
+
+.meal-container img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.meal-container .meal-title {
+  font-size: 1.2rem;
+  padding: 15px 0;
+  color: var(--color2);
+  font-family: "Work Sans", sans-serif;
+  width: 200px;
+  text-align: center;
+}
+
+.meal-container .heart-container {
+  display: flex;
+  align-items: center;
+}
+
+footer p span {
+  color: var(--color1);
+  letter-spacing: 3px;
+  padding: 0 2px;
+}
+
+.meal-container .heart-container span {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.meal-container .meal-content {
+  padding: 0 8px;
+  background-color: #fff;
+  height: 100%;
+}
+
+.meal-container .fa-heart {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  transition: all ease 0.3s;
+  color: tomato;
+  padding-right: 8px;
+}
+
+[data-aos="fade-down"].aos-animate {
+  z-index: 1 !important;
+}
+
+[data-aos="fade-down"] {
+  z-index: -1;
+}
+
+.comment-btn {
+  width: 100%;
+  border: transparent;
+  font-size: 1.2rem;
+  background-color: var(--color2);
+  color: var(--color3);
+  transition: all ease-in 0.3s;
+  letter-spacing: 3px;
+}
+
+.comment-btn:hover {
+  background-color: var(--color3);
+  color: var(--color2);
+}
+
+.modal-title {
+  text-align: center;
+  flex: 1;
+}
+
+.modal-category {
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+.btn {
+  color: var(--color3);
+  background-color: var(--color2);
+  border: none;
+  transition: all ease 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color3);
+  color: var(--color2);
+}
+
+footer {
+  background-color: var(--color2);
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  header {
+    background-color: var(--color2);
+    display: grid;
+    place-items: center;
+  }
+
+  header ul {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  header ul li {
+    margin: 10px 0;
+  }
+
+  .meal-container {
+    display: grid;
+    place-items: center;
+  }
+
+  .meal-container:first-child {
+    margin-top: 12rem;
+  }
+}
