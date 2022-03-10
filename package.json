@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/helio3197/javascript-capstone-project.git"
+    "url": "git+https://github.com/LuisSalas94/javascript-capstone-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/helio3197/javascript-capstone-project/issues"
+    "url": "https://github.com/LuisSalas94/javascript-capstone-project/issues"
   },
-  "homepage": "https://github.com/helio3197/javascript-capstone-project#readme",
+  "homepage": "https://github.com/LuisSalas94/javascript-capstone-project#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "babel-eslint": "^10.1.0",

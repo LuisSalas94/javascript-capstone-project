@@ -117,7 +117,7 @@ const showMealList = () => {
         const { id } = currentLikeBtn.parentNode.parentNode.parentNode;
         const numberLikes = currentLikeBtn.parentNode.lastElementChild;
         numberLikes.innerHTML = `${
-          +numberLikes.innerHTML.split('')[0] + 1
+          +numberLikes.innerHTML.split(' ')[0] + 1
         } likes`;
         currentLikeBtn.classList.replace('fa-regular', 'fa-solid');
         sendLike(id);
