@@ -1,27 +1,61 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
 
 * {
   list-style: none;
   text-decoration: none;
 }
 
+:root {
+  --color1: #93bfcc;
+  --color2: #354c6e;
+  --color3: #e1e7ea;
+}
+
+*::selection {
+  background-color: var(--color1);
+  color: #fff;
+}
+
+html::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color1);
+}
+
 body {
-  background-color: #f1f2f6;
-  font-family: "Roboto", sans-serif;
+  background-color: var(--color3);
+}
+
+header {
+  background-color: var(--color2);
+  height: 60px;
+  box-shadow: 0 0.3rem 5rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 
 header ul {
   width: 100%;
-  background-color: #212529;
+  background-color: var(--color2);
   height: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 header ul li {
   margin: 0 20px;
+  transition: all ease-in 0.2s;
+}
+
+header ul li:hover {
+  transform: scale(1.1);
 }
 
 header ul li a {
@@ -29,6 +63,16 @@ header ul li a {
   font-size: 1.2rem;
   text-transform: capitalize;
   color: aliceblue;
+  transition: all ease-in 0.3s;
+  font-family: "Eagle Lake", cursive;
+}
+
+header ul li a:hover {
+  color: var(--color1);
+}
+
+#counterItem {
+  cursor: pointer;
 }
 
 #meals-list {
@@ -39,6 +83,7 @@ header ul li a {
   flex-wrap: wrap;
 }
 
+/* ************* BORDER RADIUS****************** */
 .meal-container {
   display: flex;
   flex-direction: column;
@@ -47,10 +92,10 @@ header ul li a {
   margin: 20px 50px;
   width: 330px;
   height: 440px;
-  border: 0.8px solid #222 !important;
-  border-radius: 5px;
+  border: 0.8px solid var(--color3) !important;
   cursor: pointer;
   transition: all ease 0.3s;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .meal-container:hover {
@@ -60,13 +105,16 @@ header ul li a {
 .meal-container img {
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .meal-container .meal-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 15px 0;
-  color: #534340;
+  color: var(--color2);
+  font-family: "Work Sans", sans-serif;
   width: 200px;
+  text-align: center;
 }
 
 .meal-container .heart-container {
@@ -74,9 +122,15 @@ header ul li a {
   align-items: center;
 }
 
+.meal-container .heart-container span {
+  color: #333;
+  font-size: 1.2rem;
+}
+
 .meal-container .meal-content {
   padding: 0 8px;
   background-color: #fff;
+  height: 100%;
 }
 
 .meal-container .fa-heart {
@@ -91,10 +145,16 @@ header ul li a {
 .comment-btn {
   width: 100%;
   border: transparent;
-  height: 40px;
   font-size: 1.2rem;
-  background-color: #bb9981;
-  color: #f1f2f6;
+  background-color: var(--color2);
+  color: var(--color3);
+  transition: all ease-in 0.3s;
+  letter-spacing: 3px;
+}
+
+.comment-btn:hover {
+  background-color: var(--color3);
+  color: var(--color2);
 }
 
 .modal-title {
@@ -108,7 +168,55 @@ header ul li a {
 }
 
 .btn {
-  color: #000;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  color: var(--color3);
+  background-color: var(--color2);
+  border: none;
+  transition: all ease 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color3);
+  color: var(--color2);
+}
+
+footer {
+  background-color: var(--color2);
+}
+
+footer p span {
+  color: var(--color1);
+  letter-spacing: 3px;
+  padding: 0 2px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  header {
+    background-color: var(--color2);
+    display: grid;
+    place-items: center;
+  }
+
+  header ul {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  header ul li {
+    margin: 10px 0;
+  }
+
+  .meal-container {
+    display: grid;
+    place-items: center;
+  }
+
+  .meal-container:first-child {
+    margin-top: 12rem;
+  }
 }
