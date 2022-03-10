@@ -85,8 +85,6 @@ header ul li a:hover {
 }
 
 .meal-container {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 0;
   margin: 20px 0;
@@ -147,6 +145,14 @@ footer p span {
   transition: all ease 0.3s;
   color: tomato;
   padding-right: 8px;
+}
+
+[data-aos="fade-down"].aos-animate {
+  z-index: 1 !important;
+}
+
+[data-aos="fade-down"] {
+  z-index: -1;
 }
 
 .comment-btn {
