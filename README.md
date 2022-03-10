@@ -23,6 +23,8 @@ This website displays recipes meals using APIs to retrieve details from a DataBa
 ## Live Page
 
 [Page Link](https://LuisSalas94.github.io/javascript-capstone-project/dist/)
+<br>
+[Video Link](https://drive.google.com/file/d/1VTg0KvMuPvTiFc5Ha43aP5RUsg8X2JD9/view?usp=sharing)
 
 
 ## Getting Started
