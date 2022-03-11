@@ -95,6 +95,7 @@ header ul li a:hover {
   cursor: pointer;
   transition: all ease 0.3s;
   box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .meal-container:hover {

@@ -75,7 +75,7 @@ const showMealList = () => {
 }</span></h3>
             </div>
             <p>${res.strInstructions}</p>
-            <h6 class="fw-bold">Comments (${countComments(commentsList)})</h6>
+            <h6 class="fw-bold" id="comments-count">Comments (${countComments(commentsList)})</h6>
             <ul id="comments-list">
                 ${displayComments(commentsList)}
             </ul>
@@ -100,6 +100,9 @@ const showMealList = () => {
                       document.getElementById(
                         'comments-list',
                       ).innerHTML = `${displayComments(commentsList)}`;
+                      document.getElementById(
+                        'comments-count',
+                      ).innerHTML = `Comments (${countComments(commentsList)})`;
                     });
                   }
                 });
